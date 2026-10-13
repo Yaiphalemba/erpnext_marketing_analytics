@@ -9,6 +9,7 @@ app_license = "mit"
 # ------------------
 
 # required_apps = []
+required_apps = ["erpnext"]
 
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
@@ -84,6 +85,8 @@ app_license = "mit"
 
 # before_install = "erpnext_marketing_analytics.install.before_install"
 # after_install = "erpnext_marketing_analytics.install.after_install"
+before_install = "erpnext_marketing_analytics.setup.before_install"
+after_install = "erpnext_marketing_analytics.setup.after_install"
 
 # Uninstallation
 # ------------
@@ -148,6 +151,11 @@ app_license = "mit"
 # Scheduled Tasks
 # ---------------
 
+scheduler_events = {
+    "daily_long": [
+        "erpnext_marketing_analytics.tasks.daily_sync",
+    ],
+}
 # scheduler_events = {
 # 	"all": [
 # 		"erpnext_marketing_analytics.tasks.all"

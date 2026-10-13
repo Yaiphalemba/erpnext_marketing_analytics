@@ -1,0 +1,103 @@
+{
+  "doctype": "DocType",
+  "name": "GA4 Sync Log",
+  "module": "Marketing Analytics",
+  "custom": 0,
+  "istable": 0,
+  "editable_grid": 0,
+  "engine": "InnoDB",
+  "field_order": [
+    "status",
+    "triggered_by",
+    "start_date",
+    "end_date",
+    "started_at",
+    "ended_at",
+    "rows_processed",
+    "message",
+    "error_details"
+  ],
+  "fields": [
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Running\nSuccess\nFailed",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "triggered_by",
+      "fieldtype": "Select",
+      "label": "Trigger",
+      "options": "Manual\nScheduler",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "start_date",
+      "fieldtype": "Date",
+      "label": "Start Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "end_date",
+      "fieldtype": "Date",
+      "label": "End Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "started_at",
+      "fieldtype": "Datetime",
+      "label": "Started At"
+    },
+    {
+      "fieldname": "ended_at",
+      "fieldtype": "Datetime",
+      "label": "Ended At"
+    },
+    {
+      "fieldname": "rows_processed",
+      "fieldtype": "Int",
+      "label": "Rows Processed",
+      "default": "0",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "message",
+      "fieldtype": "Small Text",
+      "label": "Message"
+    },
+    {
+      "fieldname": "error_details",
+      "fieldtype": "Code",
+      "label": "Error Details",
+      "options": "Python",
+      "read_only": 1
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "report": 1,
+      "export": 1
+    },
+    {
+      "role": "Marketing Analytics Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "report": 1,
+      "export": 1
+    }
+  ],
+  "sort_field": "started_at",
+  "sort_order": "DESC",
+  "track_changes": 1,
+  "autoname": "hash",
+  "title_field": "status"
+}

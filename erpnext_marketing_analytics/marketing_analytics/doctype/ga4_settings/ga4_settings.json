@@ -1,0 +1,62 @@
+{
+  "doctype": "DocType",
+  "name": "GA4 Settings",
+  "module": "Marketing Analytics",
+  "custom": 0,
+  "istable": 0,
+  "editable_grid": 0,
+  "engine": "InnoDB",
+  "field_order": [
+    "enabled",
+    "property_id",
+    "lookback_days"
+  ],
+  "fields": [
+    {
+      "fieldname": "enabled",
+      "fieldtype": "Check",
+      "label": "Enabled",
+      "default": "0"
+    },
+    {
+      "fieldname": "property_id",
+      "fieldtype": "Data",
+      "label": "GA4 Property ID",
+      "reqd": 1,
+      "description": "Numeric GA4 property ID, not the G- measurement ID."
+    },
+    {
+      "fieldname": "lookback_days",
+      "fieldtype": "Int",
+      "label": "Lookback Days",
+      "default": "7",
+      "reqd": 1,
+      "description": "Daily job re-syncs this many completed days to capture late-arriving data."
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "report": 1,
+      "export": 1
+    },
+    {
+      "role": "Marketing Analytics Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "report": 1,
+      "export": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1,
+  "issingle": 1,
+  "autoname": "GA4 Settings",
+  "title_field": "property_id"
+}

@@ -1,0 +1,17 @@
+{
+  "doctype": "Page",
+  "name": "marketing-analytics-dashboard",
+  "page_name": "marketing-analytics-dashboard",
+  "title": "Marketing Analytics Dashboard",
+  "module": "Marketing Analytics",
+  "icon": "chart-line",
+  "standard": 1,
+  "roles": [
+    {
+      "role": "System Manager"
+    },
+    {
+      "role": "Marketing Analytics Manager"
+    }
+  ]
+}
