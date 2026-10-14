@@ -47,14 +47,14 @@
     },
     {
       "fieldname": "dimension_value",
-      "fieldtype": "Data",
+      "fieldtype": "Small Text",
       "label": "Dimension Value",
       "reqd": 1,
       "in_list_view": 1
     },
     {
       "fieldname": "landing_page",
-      "fieldtype": "Data",
+      "fieldtype": "Small Text",
       "label": "Landing Page"
     },
     {

@@ -3,3 +3,6 @@
 
 # import frappe
 from frappe.model.document import Document
+
+class GA4DailyAnalytics(Document):
+	pass
