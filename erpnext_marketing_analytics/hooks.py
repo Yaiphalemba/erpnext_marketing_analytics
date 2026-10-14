@@ -28,6 +28,7 @@ required_apps = ["erpnext"]
 # include js, css files in header of desk.html
 # app_include_css = "/assets/erpnext_marketing_analytics/css/erpnext_marketing_analytics.css"
 # app_include_js = "/assets/erpnext_marketing_analytics/js/erpnext_marketing_analytics.js"
+app_include_js = "/assets/erpnext_marketing_analytics/js/marketing_snapshot.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/erpnext_marketing_analytics/css/erpnext_marketing_analytics.css"

@@ -70,9 +70,8 @@
     },
     {
       "fieldname": "error_details",
-      "fieldtype": "Code",
+      "fieldtype": "Long Text",
       "label": "Error Details",
-      "options": "Python",
       "read_only": 1
     }
   ],

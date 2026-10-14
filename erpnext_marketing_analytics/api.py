@@ -66,5 +66,10 @@ def get_dashboard_data(days=30):
         "trend": [{"date": str(r.date), "active_users": r.active_users, "sessions": r.sessions,
                    "page_views": r.page_views, "conversions": r.conversions} for r in rows],
         "breakdown": breakdown,
-        "last_sync": frappe.db.get_value("GA4 Sync Log", {"status": "Success"}, ["ended_at"], order_by="end_time desc"),
+        "last_sync": frappe.db.get_value(
+            "GA4 Sync Log",
+            {"status": "Success"},
+            "ended_at",
+            order_by="ended_at desc",
+        ),
     }
