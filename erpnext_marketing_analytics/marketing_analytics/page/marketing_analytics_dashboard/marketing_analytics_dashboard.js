@@ -34,10 +34,10 @@ frappe.pages["marketing-analytics-dashboard"].on_page_load = function (wrapper) 
         change() { if (snapshot) refresh_all(false); }
     });
 
-    // ---- layout: totals/trend/breakdowns, snapshot, then last-sync stamp
+    // ---- layout: last-sync stamp, totals/trend/breakdowns, snapshot
+    const $sync = $('<div class="text-muted small ga4-last-sync"></div>').css("margin", "12px 0 24px").appendTo(page.main);
     const $body = $('<div class="ga4-legacy"></div>').css("margin-top", "16px").appendTo(page.main);
     const $snap = $('<div class="ma-snapshot-wrap"></div>').appendTo(page.main);
-    const $sync = $('<div class="text-muted small ga4-last-sync"></div>').css("margin", "12px 0 24px").appendTo(page.main);
 
     snapshot = new erpnext_marketing_analytics.Snapshot($snap[0], {days: get_days()});
 
