@@ -462,12 +462,28 @@ If you cannot see the dashboard, ask your administrator to give you the **Market
 
 Do this once. Some steps need whoever looks after your server, and they are marked.
 
-1. In **Google Cloud**, enable the *Google Analytics Data API* for your project, create a **service account**, and download its JSON key file.
-2. In **Google Analytics**, go to *Admin*, then *Property access management*, and add the service account's email address with the **Viewer** role.
-3. **Server administrator:** place the JSON file somewhere only the server's bench user can read it, and set the site's `ga4_credentials_file` setting to its full path. Never email the file or put it in a shared folder.
-4. In ERPNext, open **GA4 Settings**. Enter the **GA4 Property ID**. It is the number under *Admin, Property details*, and not the `G-...` code. Tick **Enabled**, leave **Lookback Days** at 7, and **Save**.
-5. Click **Sync Now** and confirm. You are taken to **GA4 Sync Log**. A record with status **Success** means the connection works.
-6. Open **Marketing Analytics Dashboard** from the search bar.
+1. **Create or select a Google Cloud project.** Open [Google Cloud Console](https://console.cloud.google.com/). Select an existing project or create one, for example `erpnext-marketing-analytics`.
+
+2. **Enable the Google Analytics Data API.** Open [Google Analytics Data API](https://console.cloud.google.com/apis/library/analyticsdata.googleapis.com) and click **Enable**. This API retrieves GA4 reporting data.
+
+3. **Create a service account.** Go to [Service Accounts](https://console.cloud.google.com/iam-admin/serviceaccounts), create a service account such as `erpnext-ga4-reader`, and generate a **JSON key** if your organization's security policy permits it.
+
+4. **Grant access to your GA4 property.** Open [Google Analytics](https://analytics.google.com/) and navigate to:
+   `Admin → Property access management → + → Add users`
+
+5. **Add the service account's email address.** Grant it the **Viewer** role. This is separate from enabling the API in Google Cloud.
+
+6. **Find your GA4 Property ID.** Navigate to `Admin → Property details` and copy the numeric Property ID. For example, `123456789`.
+
+   > **Important:** Do not use the Measurement ID that starts with `G-`. The Data API requires the numeric Property ID.
+
+7. **Configure the credentials file (server administrator).** Place the JSON file somewhere only the server's bench user can read it, and set the site's `ga4_credentials_file` setting to its full path. Never email the file or put it in a shared folder.
+
+8. **Configure GA4 Settings in ERPNext.** Open **GA4 Settings**, enter the **GA4 Property ID**, and tick **Enabled**. Leave **Lookback Days** at `7` and click **Save**.
+
+9. **Test the connection.** Click **Sync Now** and confirm. You will be taken to **GA4 Sync Log**. A record with the status **Success** means the connection works.
+
+10. **Open the Marketing Analytics Dashboard.** Search for **Marketing Analytics Dashboard** using the ERPNext search bar.
 
 **Loading older history.** Sync Now only covers the last *Lookback Days*. To bring in more, set Lookback Days to a bigger number (up to 365), press **Sync Now**, then set it back to 7. The nightly job does the daily top-up from then on.
 
